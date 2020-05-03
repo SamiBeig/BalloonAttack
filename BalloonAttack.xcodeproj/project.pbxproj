@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C31F1DA245F2A64005A2F29 /* FreePlay.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0C31F1D9245F2A64005A2F29 /* FreePlay.sks */; };
+		0C31F1DC245F2AD5005A2F29 /* FreePlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C31F1DB245F2AD5005A2F29 /* FreePlay.swift */; };
+		0C31F207245F6ACA005A2F29 /* InfoButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C31F206245F6ACA005A2F29 /* InfoButtonViewController.swift */; };
+		0C31F209245F6AD5005A2F29 /* InfoButton.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C31F208245F6AD5005A2F29 /* InfoButton.storyboard */; };
 		0C48BEE1245D1ACB00A721EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C48BEE0245D1ACB00A721EC /* AppDelegate.swift */; };
 		0C48BEE3245D1ACB00A721EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C48BEE2245D1ACB00A721EC /* SceneDelegate.swift */; };
 		0C48BEE5245D1ACB00A721EC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C48BEE4245D1ACB00A721EC /* HomeViewController.swift */; };
@@ -17,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C31F1D9245F2A64005A2F29 /* FreePlay.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FreePlay.sks; sourceTree = "<group>"; };
+		0C31F1DB245F2AD5005A2F29 /* FreePlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreePlay.swift; sourceTree = "<group>"; };
+		0C31F206245F6ACA005A2F29 /* InfoButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoButtonViewController.swift; sourceTree = "<group>"; };
+		0C31F208245F6AD5005A2F29 /* InfoButton.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InfoButton.storyboard; sourceTree = "<group>"; };
 		0C48BEDD245D1ACB00A721EC /* BalloonAttack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BalloonAttack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C48BEE0245D1ACB00A721EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C48BEE2245D1ACB00A721EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +47,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C31F1D8245F28BB005A2F29 /* FreePlay */ = {
+			isa = PBXGroup;
+			children = (
+				0C31F1D9245F2A64005A2F29 /* FreePlay.sks */,
+				0C31F1DB245F2AD5005A2F29 /* FreePlay.swift */,
+			);
+			path = FreePlay;
+			sourceTree = "<group>";
+		};
+		0C31F205245F6AB2005A2F29 /* InfoButton */ = {
+			isa = PBXGroup;
+			children = (
+				0C31F206245F6ACA005A2F29 /* InfoButtonViewController.swift */,
+				0C31F208245F6AD5005A2F29 /* InfoButton.storyboard */,
+			);
+			path = InfoButton;
+			sourceTree = "<group>";
+		};
 		0C48BED4245D1ACB00A721EC = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +84,8 @@
 		0C48BEDF245D1ACB00A721EC /* BalloonAttack */ = {
 			isa = PBXGroup;
 			children = (
+				0C31F205245F6AB2005A2F29 /* InfoButton */,
+				0C31F1D8245F28BB005A2F29 /* FreePlay */,
 				0C830A2F245E470800D451FE /* HomeScreen */,
 				0C48BEE0245D1ACB00A721EC /* AppDelegate.swift */,
 				0C48BEE2245D1ACB00A721EC /* SceneDelegate.swift */,
@@ -136,8 +164,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C31F209245F6AD5005A2F29 /* InfoButton.storyboard in Resources */,
 				0C830A2E245E3A7000D451FE /* ArchitectsDaughter.ttf in Resources */,
 				0C48BEED245D1ACC00A721EC /* LaunchScreen.storyboard in Resources */,
+				0C31F1DA245F2A64005A2F29 /* FreePlay.sks in Resources */,
 				0C48BEEA245D1ACC00A721EC /* Assets.xcassets in Resources */,
 				0C48BEE8245D1ACB00A721EC /* HomeScreen.storyboard in Resources */,
 			);
@@ -151,8 +181,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C48BEE5245D1ACB00A721EC /* HomeViewController.swift in Sources */,
+				0C31F1DC245F2AD5005A2F29 /* FreePlay.swift in Sources */,
 				0C48BEE1245D1ACB00A721EC /* AppDelegate.swift in Sources */,
 				0C48BEE3245D1ACB00A721EC /* SceneDelegate.swift in Sources */,
+				0C31F207245F6ACA005A2F29 /* InfoButtonViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
