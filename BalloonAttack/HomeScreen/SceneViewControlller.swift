@@ -29,7 +29,8 @@ class SceneViewController: UIViewController{
         view.presentScene(scene)
         //currentScene = scene as? FreePlay
         //currentScene?.viewController = self
-        
+        view.showsNodeCount = true
+        view.showsFPS = true
       }
       
     }
