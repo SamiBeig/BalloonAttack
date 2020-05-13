@@ -9,9 +9,11 @@
 import UIKit
 import SpriteKit
 import GameplayKit
+import CoreLocation
 
 class HomeViewController: UIViewController{
-  //var currentScene: FreePlay?
+
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
@@ -19,46 +21,20 @@ class HomeViewController: UIViewController{
     //elf.view.backgroundColor = UIColor.blue
     //view.backgroundColor = .black
     self.navigationController?.setNavigationBarHidden(true, animated: false)
-    
+
   }
-  
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     self.navigationController?.setNavigationBarHidden(true, animated: false)
 
   }
-  
-  @IBAction func freePlay(_ sender: Any) {
-    //var currentScene: FreePlay?
-    /*
-    if let view = self.view as! SKView? {
-      // Load the SKScene from 'GameScene.sks'
-      if let scene = SKScene(fileNamed: "FreePlay") {
-        // Set the scale mode to scale to fit the window
-        scene.scaleMode = .aspectFill
-        
-        //view.removeFromSuperview()
-        // Present the scene
-        view.ignoresSiblingOrder = true
 
-        view.presentScene(scene)
-        currentScene = scene as? FreePlay
-        currentScene?.viewController = self
-        
-      }
-      */
-      //scene.scaleMode = .aspectFill
-      
-      //view.removeFromSuperview()
-      // Present the scene
-      //let scene = SKScene(fileNamed: "FreePlay")
-      //view.presentScene(scene)
-      //currentScene = scene as? FreePlay
-      //currentScene?.viewController = self
-      
-      
-    }
-  }
   
   
+  
+  
+}
+
+
+
 

@@ -19,6 +19,8 @@
 		0C48BEED245D1ACC00A721EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C48BEEB245D1ACC00A721EC /* LaunchScreen.storyboard */; };
 		0C830A2E245E3A7000D451FE /* ArchitectsDaughter.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C830A2D245E3A7000D451FE /* ArchitectsDaughter.ttf */; };
 		0CA32463246891ED00EBA37D /* SceneViewControlller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA32462246891ED00EBA37D /* SceneViewControlller.swift */; };
+		0CEFFFF2246B45120044BCD6 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEFFFF1246B45120044BCD6 /* WeatherViewController.swift */; };
+		0CEFFFF4246B6E800044BCD6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEFFFF3246B6E800044BCD6 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		0C48BEEE245D1ACC00A721EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C830A2D245E3A7000D451FE /* ArchitectsDaughter.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ArchitectsDaughter.ttf; sourceTree = "<group>"; };
 		0CA32462246891ED00EBA37D /* SceneViewControlller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneViewControlller.swift; sourceTree = "<group>"; };
+		0CEFFFF1246B45120044BCD6 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		0CEFFFF3246B6E800044BCD6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,7 @@
 				0C48BEE0245D1ACB00A721EC /* AppDelegate.swift */,
 				0C48BEEB245D1ACC00A721EC /* LaunchScreen.storyboard */,
 				0C48BEEE245D1ACC00A721EC /* Info.plist */,
+				0CEFFFF3246B6E800044BCD6 /* Constants.swift */,
 			);
 			path = BalloonAttack;
 			sourceTree = "<group>";
@@ -105,6 +110,7 @@
 				0C48BEE6245D1ACB00A721EC /* HomeScreen.storyboard */,
 				0C48BEE4245D1ACB00A721EC /* HomeViewController.swift */,
 				0CA32462246891ED00EBA37D /* SceneViewControlller.swift */,
+				0CEFFFF1246B45120044BCD6 /* WeatherViewController.swift */,
 			);
 			path = HomeScreen;
 			sourceTree = "<group>";
@@ -187,8 +193,10 @@
 				0C31F1DC245F2AD5005A2F29 /* FreePlay.swift in Sources */,
 				0C48BEE1245D1ACB00A721EC /* AppDelegate.swift in Sources */,
 				0C48BEE3245D1ACB00A721EC /* SceneDelegate.swift in Sources */,
+				0CEFFFF2246B45120044BCD6 /* WeatherViewController.swift in Sources */,
 				0CA32463246891ED00EBA37D /* SceneViewControlller.swift in Sources */,
 				0C31F207245F6ACA005A2F29 /* InfoButtonViewController.swift in Sources */,
+				0CEFFFF4246B6E800044BCD6 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
