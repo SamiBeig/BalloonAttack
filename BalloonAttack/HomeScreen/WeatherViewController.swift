@@ -27,6 +27,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     // Do any additional setup after loading the view.
     self.navigationController?.setNavigationBarHidden(false, animated: false)
     self.navigationController?.navigationBar.barTintColor = UIColor(red: 112.0/255.0, green: 193.0/255.0, blue: 179.0/255.0, alpha: 1.0)
+    weatherID.text = "Weather ID = \(Singleton.weatherID)"
     
     let authorizationStatus = CLLocationManager.authorizationStatus()
     if authorizationStatus == .notDetermined{
@@ -47,7 +48,8 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     locationManager.startUpdatingLocation()
     isUpdatingLocation = true
     
-
+    refresh([])
+    
   }
   
   @objc func didTimeOut(){
@@ -64,16 +66,18 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     //print("didUpdateLocations \(newLocation)")
   }
   
-  func setWeather(weather: String?, description: String?, temp: Int, ID: Int){
-    weatherLabel.text = description ?? "..."
-    degreeLabel.text = "\(temp)°"
+  func setWeather(description: String?, temp: Int, ID: Int){
+    weatherLabel.text = description?.capitalizingFirstLetter() ?? "..."
+    degreeLabel.text = "\(temp)° F"
     weatherID.text = "Weather ID = \(ID)"
-     
+    
+    
   }
   
   
   @IBAction func refresh(_ sender: Any) {
     if let location = location{
+      
       let urlBeginning = "https://api.openweathermap.org/data/2.5/weather?"
       let lat = "lat=\(location.coordinate.latitude)"
       let lon =  "&lon=\(location.coordinate.longitude)&units=imperial"
@@ -93,7 +97,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
             let description = (weatherDetails.first?["description"] as? String)
             let jsonID = (weatherDetails.first?["id"] as? Int ?? 0)
             DispatchQueue.main.async{
-              self.setWeather(weather: weatherDetails.first?["main"] as? String, description: description, temp:temp, ID: jsonID )
+              self.setWeather(description: description, temp:temp, ID: jsonID )
             }
           }
           catch{
@@ -109,7 +113,16 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
   }
   
   
+}
+
+
+// https://www.hackingwithswift.com/example-code/strings/how-to-capitalize-the-first-letter-of-a-string
+extension String {
+  func capitalizingFirstLetter() -> String {
+    return prefix(1).capitalized + dropFirst()
+  }
   
-  
-  
+  mutating func capitalizeFirstLetter() {
+    self = self.capitalizingFirstLetter()
+  }
 }

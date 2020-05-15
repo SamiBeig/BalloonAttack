@@ -29,9 +29,22 @@ class HomeViewController: UIViewController{
 
   }
 
+
+}
+
+class Singleton {
   
+  static var weatherID = 200
+    
+  // Make init method private
   
+  private init() {
+    Singleton.weatherID = 200
+  }
   
+  func updateID(updatedID: Int){
+    Singleton.weatherID = updatedID
+  }
   
 }
 
