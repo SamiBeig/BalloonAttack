@@ -8,6 +8,8 @@
 
 import SpriteKit
 import GameplayKit
+import AVFoundation
+
 
 class FreePlay: SKScene, SKPhysicsContactDelegate {
   //private var label : SKLabelNode?
@@ -20,6 +22,12 @@ class FreePlay: SKScene, SKPhysicsContactDelegate {
     }
   }
   var gameTimer:Timer!
+  var popSoundEffect: AVAudioPlayer?
+  
+  /*
+  let path = Bundle.main.url(forResource: "BalloonPop", withExtension: "mp3")
+  let url = URL(fileURLWithPath: path!)
+   */
   
   var balloonList = ["RedBalloon", "BlueBalloon", "LightBlueBalloon", "GreenBalloon", "PinkBalloon"]
   
@@ -45,7 +53,7 @@ class FreePlay: SKScene, SKPhysicsContactDelegate {
     //Shuffling the array to get a random Balloon from assets
     balloonList = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: balloonList) as! [String]
     
-    //Initialize balloon with random balloon
+    //Initialize balloon with random balloon image
     let balloon = SKSpriteNode(imageNamed: balloonList[0])
     
     //random position based on screen size
@@ -75,23 +83,20 @@ class FreePlay: SKScene, SKPhysicsContactDelegate {
       let location = touch.location(in: self)
       let touchedNode = self.atPoint(location)
       touchedNode.removeFromParent()
-      print("removed!")
+      score+=5
       
     }
     
+    let path = Bundle.main.path(forResource: "BalloonPop", ofType: "mp3")
+    let url = URL(fileURLWithPath: path!)
     
-    /*
-     override func sceneDidLoad() {
-     // Get label node from scene and store it for use later
-     self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
-     if let label = self.label {
-     label.alpha = 0.0
-     label.run(SKAction.fadeIn(withDuration: 2.0))
-     }
-     }
-     */
-    
-    
+    do{
+      popSoundEffect = try AVAudioPlayer(contentsOf: url)
+      popSoundEffect?.play()
+    }
+    catch{
+      print("couldn't find ")
+    }
     
   }
 }
