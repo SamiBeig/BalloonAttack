@@ -25,8 +25,8 @@ class FreePlay: SKScene, SKPhysicsContactDelegate {
   var popSoundEffect: AVAudioPlayer?
   
   /*
-  let path = Bundle.main.url(forResource: "BalloonPop", withExtension: "mp3")
-  let url = URL(fileURLWithPath: path!)
+   let path = Bundle.main.url(forResource: "BalloonPop", withExtension: "mp3")
+   let url = URL(fileURLWithPath: path!)
    */
   
   var balloonList = ["RedBalloon", "BlueBalloon", "LightBlueBalloon", "GreenBalloon", "PinkBalloon"]
@@ -55,6 +55,7 @@ class FreePlay: SKScene, SKPhysicsContactDelegate {
     
     //Initialize balloon with random balloon image
     let balloon = SKSpriteNode(imageNamed: balloonList[0])
+    balloon.name = "balloon"
     
     //random position based on screen size
     let randomBalloonPosition = GKRandomDistribution(lowestValue: -320, highestValue: 320)
@@ -82,21 +83,25 @@ class FreePlay: SKScene, SKPhysicsContactDelegate {
     for touch in touches {
       let location = touch.location(in: self)
       let touchedNode = self.atPoint(location)
-      touchedNode.removeFromParent()
-      score+=5
+      
+      if touchedNode.name == "balloon"{
+        touchedNode.removeFromParent()
+        score+=5
+        
+        let path = Bundle.main.path(forResource: "BalloonPop", ofType: "mp3")
+        let url = URL(fileURLWithPath: path!)
+        
+        do{
+          popSoundEffect = try AVAudioPlayer(contentsOf: url)
+          popSoundEffect?.play()
+        }
+        catch{
+          print("couldn't find ")
+        }
+      }
       
     }
     
-    let path = Bundle.main.path(forResource: "BalloonPop", ofType: "mp3")
-    let url = URL(fileURLWithPath: path!)
-    
-    do{
-      popSoundEffect = try AVAudioPlayer(contentsOf: url)
-      popSoundEffect?.play()
-    }
-    catch{
-      print("couldn't find ")
-    }
     
   }
 }
