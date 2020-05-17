@@ -29,7 +29,7 @@ class FreePlay: SKScene, SKPhysicsContactDelegate {
    let url = URL(fileURLWithPath: path!)
    */
   
-  var balloonList = ["RedBalloon", "BlueBalloon", "LightBlueBalloon", "GreenBalloon"]
+  var balloonList = ["RedBalloon", "BlueBalloon", "YellowBalloon", "GreenBalloon", "PinkBalloon"]
   
   override func didMove(to view: SKView){
     
@@ -57,32 +57,38 @@ class FreePlay: SKScene, SKPhysicsContactDelegate {
     let balloon = SKSpriteNode(imageNamed: balloonList[0])
     balloon.name = "balloon"
     
-    let deathBalloon = SKSpriteNode(imageNamed: "PinkBalloon")
+    let deathBalloon = SKSpriteNode(imageNamed: "DeathBalloon")
     deathBalloon.name = "deathBalloon"
     
     //random position based on screen size
-    let randomBalloonPosition = GKRandomDistribution(lowestValue: -320, highestValue: 320)
+    let randomBalloonPosition = GKRandomDistribution(lowestValue: -310, highestValue: 310)
     let position = CGFloat(randomBalloonPosition.nextInt())
+    
+    let randomBalloonPosition2 = GKRandomDistribution(lowestValue: -310, highestValue: 310)
+    let position2 = CGFloat(randomBalloonPosition2.nextInt())
     
     //set position of balloon
     balloon.position = CGPoint(x: position, y:self.frame.size.height + balloon.size.height)
     balloon.physicsBody = SKPhysicsBody(rectangleOf: balloon.size)
-    balloon.physicsBody?.isDynamic = true
+    balloon.physicsBody?.allowsRotation = false
+    balloon.physicsBody?.isDynamic = false
     
-    deathBalloon.position = CGPoint(x: position, y:self.frame.size.height + deathBalloon.size.height)
+    deathBalloon.position = CGPoint(x: position2, y:self.frame.size.height + deathBalloon.size.height)
     deathBalloon.physicsBody = SKPhysicsBody(rectangleOf: deathBalloon.size)
-    deathBalloon.physicsBody?.isDynamic = true
+    deathBalloon.physicsBody?.allowsRotation = false
+    deathBalloon.physicsBody?.isDynamic = false
     
     self.addChild(balloon)
     self.addChild(deathBalloon)
     
-    let animationDuration:TimeInterval = 6
+    let animationDuration:TimeInterval = 6.5
     var actionArray = [SKAction]()
+    
     actionArray.append(SKAction.move(to: CGPoint(x: position, y: -balloon.size.height - 500), duration: animationDuration))
     actionArray.append(SKAction.removeFromParent())
     
     balloon.run(SKAction.sequence(actionArray))
-    //deathBalloon.run(SKAction.sequence(actionArray))
+    deathBalloon.run(SKAction.sequence(actionArray))
     
   }
   
