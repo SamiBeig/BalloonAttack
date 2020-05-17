@@ -9,56 +9,85 @@
 import UIKit
 import SpriteKit
 import GameplayKit
+import CoreLocation
 
-class HomeViewController: UIViewController{
-  //var currentScene: FreePlay?
+class HomeViewController: UIViewController, CLLocationManagerDelegate{
+  
+  let locationManager = CLLocationManager()
+  //var location: CLLocation?
+  var isUpdatingLocation = false
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
-    //self.view.backgroundColor = UIColor.red
-    //elf.view.backgroundColor = UIColor.blue
-    //view.backgroundColor = .black
     self.navigationController?.setNavigationBarHidden(true, animated: false)
     
+    
+    let authorizationStatus = CLLocationManager.authorizationStatus()
+    if authorizationStatus == .notDetermined{
+      locationManager.requestWhenInUseAuthorization()
+    }
+    
+    if authorizationStatus == .denied || authorizationStatus == .restricted{
+      let alert = UIAlertController(title: "Please change your location settings for this app!",  message:"Please go to Settings -> Privary and fix this!", preferredStyle: .alert)
+      let okAction = UIAlertAction(title: "OK", style: .default, handler: nil )
+      alert.addAction(okAction)
+      
+      present(alert, animated: true, completion: nil)
+      
+    }
+    
+    locationManager.delegate = self
+    locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+    locationManager.startUpdatingLocation()
+    isUpdatingLocation = true
+    
+    //refresh([])
+    
   }
+  
+  
+  @objc func didTimeOut(){
+    print("Time out")
+  }
+  
+  func locationManager(_ manager: CLLocationManager,
+                       didFailWithError error: Error) {
+    print("didFailWithError \(error.localizedDescription)")
+  }
+  func locationManager(_ manager: CLLocationManager,
+                       didUpdateLocations locations: [CLLocation]) {
+    Singleton.location = locations.last!
+    //print("didUpdateLocations \(newLocation)")
+  }
+  
+  
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     self.navigationController?.setNavigationBarHidden(true, animated: false)
-
-  }
-  
-  @IBAction func freePlay(_ sender: Any) {
-    //var currentScene: FreePlay?
-    /*
-    if let view = self.view as! SKView? {
-      // Load the SKScene from 'GameScene.sks'
-      if let scene = SKScene(fileNamed: "FreePlay") {
-        // Set the scale mode to scale to fit the window
-        scene.scaleMode = .aspectFill
-        
-        //view.removeFromSuperview()
-        // Present the scene
-        view.ignoresSiblingOrder = true
-
-        view.presentScene(scene)
-        currentScene = scene as? FreePlay
-        currentScene?.viewController = self
-        
-      }
-      */
-      //scene.scaleMode = .aspectFill
-      
-      //view.removeFromSuperview()
-      // Present the scene
-      //let scene = SKScene(fileNamed: "FreePlay")
-      //view.presentScene(scene)
-      //currentScene = scene as? FreePlay
-      //currentScene?.viewController = self
-      
-      
-    }
+    
   }
   
   
+}
+
+class Singleton {
+  
+  static var weatherID = 200
+  static var location:CLLocation?
+  
+  // Make init method private
+  
+  private init() {
+    Singleton.weatherID = 200
+  }
+  
+  func updateID(updatedID: Int){
+    Singleton.weatherID = updatedID
+  }
+  
+}
+
+
+
 

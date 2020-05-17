@@ -11,6 +11,8 @@
 		0C31F1DC245F2AD5005A2F29 /* FreePlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C31F1DB245F2AD5005A2F29 /* FreePlay.swift */; };
 		0C31F207245F6ACA005A2F29 /* InfoButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C31F206245F6ACA005A2F29 /* InfoButtonViewController.swift */; };
 		0C31F209245F6AD5005A2F29 /* InfoButton.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C31F208245F6AD5005A2F29 /* InfoButton.storyboard */; };
+		0C442BF724710B93004A90D4 /* EndGame.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0C442BF624710B93004A90D4 /* EndGame.sks */; };
+		0C442BFB24710FA6004A90D4 /* GameOver.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0C442BFA24710FA6004A90D4 /* GameOver.mp3 */; };
 		0C48BEE1245D1ACB00A721EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C48BEE0245D1ACB00A721EC /* AppDelegate.swift */; };
 		0C48BEE3245D1ACB00A721EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C48BEE2245D1ACB00A721EC /* SceneDelegate.swift */; };
 		0C48BEE5245D1ACB00A721EC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C48BEE4245D1ACB00A721EC /* HomeViewController.swift */; };
@@ -19,6 +21,9 @@
 		0C48BEED245D1ACC00A721EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C48BEEB245D1ACC00A721EC /* LaunchScreen.storyboard */; };
 		0C830A2E245E3A7000D451FE /* ArchitectsDaughter.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C830A2D245E3A7000D451FE /* ArchitectsDaughter.ttf */; };
 		0CA32463246891ED00EBA37D /* SceneViewControlller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA32462246891ED00EBA37D /* SceneViewControlller.swift */; };
+		0CD6EE33246F7AED00A41C74 /* BalloonPop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0CD6EE32246F7AED00A41C74 /* BalloonPop.mp3 */; };
+		0CEFFFF2246B45120044BCD6 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEFFFF1246B45120044BCD6 /* WeatherViewController.swift */; };
+		0CEFFFF4246B6E800044BCD6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEFFFF3246B6E800044BCD6 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,8 @@
 		0C31F1DB245F2AD5005A2F29 /* FreePlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreePlay.swift; sourceTree = "<group>"; };
 		0C31F206245F6ACA005A2F29 /* InfoButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoButtonViewController.swift; sourceTree = "<group>"; };
 		0C31F208245F6AD5005A2F29 /* InfoButton.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InfoButton.storyboard; sourceTree = "<group>"; };
+		0C442BF624710B93004A90D4 /* EndGame.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EndGame.sks; sourceTree = "<group>"; };
+		0C442BFA24710FA6004A90D4 /* GameOver.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = GameOver.mp3; sourceTree = "<group>"; };
 		0C48BEDD245D1ACB00A721EC /* BalloonAttack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BalloonAttack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C48BEE0245D1ACB00A721EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C48BEE2245D1ACB00A721EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +43,9 @@
 		0C48BEEE245D1ACC00A721EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C830A2D245E3A7000D451FE /* ArchitectsDaughter.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ArchitectsDaughter.ttf; sourceTree = "<group>"; };
 		0CA32462246891ED00EBA37D /* SceneViewControlller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneViewControlller.swift; sourceTree = "<group>"; };
+		0CD6EE32246F7AED00A41C74 /* BalloonPop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BalloonPop.mp3; sourceTree = "<group>"; };
+		0CEFFFF1246B45120044BCD6 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		0CEFFFF3246B6E800044BCD6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +62,10 @@
 		0C31F1D8245F28BB005A2F29 /* FreePlay */ = {
 			isa = PBXGroup;
 			children = (
+				0C442BF624710B93004A90D4 /* EndGame.sks */,
 				0C31F1D9245F2A64005A2F29 /* FreePlay.sks */,
+				0CD6EE32246F7AED00A41C74 /* BalloonPop.mp3 */,
+				0C442BFA24710FA6004A90D4 /* GameOver.mp3 */,
 				0C31F1DB245F2AD5005A2F29 /* FreePlay.swift */,
 			);
 			path = FreePlay;
@@ -95,6 +108,7 @@
 				0C48BEE0245D1ACB00A721EC /* AppDelegate.swift */,
 				0C48BEEB245D1ACC00A721EC /* LaunchScreen.storyboard */,
 				0C48BEEE245D1ACC00A721EC /* Info.plist */,
+				0CEFFFF3246B6E800044BCD6 /* Constants.swift */,
 			);
 			path = BalloonAttack;
 			sourceTree = "<group>";
@@ -105,6 +119,7 @@
 				0C48BEE6245D1ACB00A721EC /* HomeScreen.storyboard */,
 				0C48BEE4245D1ACB00A721EC /* HomeViewController.swift */,
 				0CA32462246891ED00EBA37D /* SceneViewControlller.swift */,
+				0CEFFFF1246B45120044BCD6 /* WeatherViewController.swift */,
 			);
 			path = HomeScreen;
 			sourceTree = "<group>";
@@ -170,6 +185,9 @@
 				0C31F209245F6AD5005A2F29 /* InfoButton.storyboard in Resources */,
 				0C830A2E245E3A7000D451FE /* ArchitectsDaughter.ttf in Resources */,
 				0C48BEED245D1ACC00A721EC /* LaunchScreen.storyboard in Resources */,
+				0C442BF724710B93004A90D4 /* EndGame.sks in Resources */,
+				0C442BFB24710FA6004A90D4 /* GameOver.mp3 in Resources */,
+				0CD6EE33246F7AED00A41C74 /* BalloonPop.mp3 in Resources */,
 				0C31F1DA245F2A64005A2F29 /* FreePlay.sks in Resources */,
 				0C48BEEA245D1ACC00A721EC /* Assets.xcassets in Resources */,
 				0C48BEE8245D1ACB00A721EC /* HomeScreen.storyboard in Resources */,
@@ -187,8 +205,10 @@
 				0C31F1DC245F2AD5005A2F29 /* FreePlay.swift in Sources */,
 				0C48BEE1245D1ACB00A721EC /* AppDelegate.swift in Sources */,
 				0C48BEE3245D1ACB00A721EC /* SceneDelegate.swift in Sources */,
+				0CEFFFF2246B45120044BCD6 /* WeatherViewController.swift in Sources */,
 				0CA32463246891ED00EBA37D /* SceneViewControlller.swift in Sources */,
 				0C31F207245F6ACA005A2F29 /* InfoButtonViewController.swift in Sources */,
+				0CEFFFF4246B6E800044BCD6 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
