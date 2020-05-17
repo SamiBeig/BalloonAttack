@@ -1,18 +1,16 @@
 //
-//  EndGame.swift
+//  EndScreen.swift
 //  BalloonAttack
 //
 //  Created by Sami Beig on 5/17/20.
 //  Copyright © 2020 Sami Beig. All rights reserved.
 //
 
+import Foundation
 import SpriteKit
-import GameplayKit
-import AVFoundation
 
-
-
-class EndGame: SKScene {
+class EndScreen: SKScene{
+  
   
   var finalScore: Int = 0
   var gameOver = SKLabelNode(text: "GAME OVER!")
@@ -20,15 +18,17 @@ class EndGame: SKScene {
   
   
   override func didMove(to view: SKView) {
-    print(finalScore)
+    //print(finalScore)
     
     gameOver.text = "GAME OVER!"
-    gameOver.position = CGPoint(x: -180, y: 465)
+    gameOver.position = CGPoint(x: 0, y: 300)
     gameOver.fontName = "AmericanTypewriter-Bold"
     gameOver.fontSize = 36
-    gameOver.fontColor = UIColor.red
+    gameOver.fontColor = UIColor.white
     self.addChild(gameOver)
 
   }
 
+  
 }
+

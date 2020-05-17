@@ -10,11 +10,13 @@ import SpriteKit
 import GameplayKit
 import AVFoundation
 
+//protocol scoreDelegate{
+//  func gameOver(score: Int)
+//}
+
 
 class FreePlay: SKScene, SKPhysicsContactDelegate {
-  //private var label : SKLabelNode?
-  //private var spinnyNode : SKShapeNode
-  
+
   var scoreLabel:SKLabelNode!
   var score:Int = 0{
     didSet{
@@ -23,11 +25,17 @@ class FreePlay: SKScene, SKPhysicsContactDelegate {
   }
   var gameTimer:Timer!
   var popSoundEffect: AVAudioPlayer?
+  //var gameOverDelegate: scoreDelegate!
   
-  /*
-   let path = Bundle.main.url(forResource: "BalloonPop", withExtension: "mp3")
-   let url = URL(fileURLWithPath: path!)
-   */
+  var timerLabel:SKLabelNode!
+
+  var timerValue: Int = 20 {
+      didSet {
+          timerLabel.text = "Time left: \(timerValue)"
+      }
+  }
+  
+  var counterTimer = Timer()
   
   var balloonList = ["RedBalloon", "BlueBalloon", "YellowBalloon", "GreenBalloon", "PinkBalloon"]
   
@@ -46,7 +54,35 @@ class FreePlay: SKScene, SKPhysicsContactDelegate {
     
     gameTimer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector:#selector(addBalloons), userInfo: nil, repeats: true)
     
+    timerLabel = SKLabelNode(text: "Time left: ")
+    timerLabel.position = CGPoint(x: 100, y: 465)
+    timerLabel.fontName = "AmericanTypewriter-Bold"
+    timerLabel.fontSize = 36
+    timerLabel.fontColor = SKColor.white
+    timerValue = 20
+    addChild(timerLabel)
+    
+    
+    startTimer()
+    
   }
+  
+  func startTimer(){
+    counterTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(decrementCounter), userInfo: nil, repeats: true)
+  }
+  
+  @objc func decrementCounter(){
+    if timerValue == 0{
+      let scene = SKScene(fileNamed: "EndGame")!
+      let transition = SKTransition.doorway(withDuration: 1)
+      self.view?.presentScene(scene, transition: transition)
+    }
+    else{
+      timerValue-=1
+    }
+  }
+  
+  
   
   @objc func addBalloons(){
     
@@ -81,7 +117,7 @@ class FreePlay: SKScene, SKPhysicsContactDelegate {
     self.addChild(balloon)
     self.addChild(deathBalloon)
     
-    let animationDuration:TimeInterval = 6.5
+    let animationDuration:TimeInterval = 4.5
     var actionArray = [SKAction]()
     
     actionArray.append(SKAction.move(to: CGPoint(x: position, y: -balloon.size.height - 500), duration: animationDuration))
@@ -90,7 +126,18 @@ class FreePlay: SKScene, SKPhysicsContactDelegate {
     balloon.run(SKAction.sequence(actionArray))
     deathBalloon.run(SKAction.sequence(actionArray))
     
+    //timeOut()
+    
   }
+  
+//  func timeOut(){
+//    if timerValue == 0 {
+//      //removeAction(forKey: "countdown")
+//      let scene = SKScene(fileNamed: "EndGame")!
+//      let transition = SKTransition.doorway(withDuration: 1)
+//      self.view?.presentScene(scene, transition: transition)
+//    }
+//  }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
     /* Called when a touch begins */
@@ -129,8 +176,21 @@ class FreePlay: SKScene, SKPhysicsContactDelegate {
         }
         
         let scene = SKScene(fileNamed: "EndGame")!
+        
+        //let nextScene = EndScreen(size: self.size)
+        //nextScene.scaleMode = scaleMode
+        //nextScene.finalScore = score
+        
+        
+        //let nextScene = EndScreen()
+        //nextScene.finalScore = score
+        //nextScene.delegate = self
+        
         let transition = SKTransition.doorway(withDuration: 1)
         self.view?.presentScene(scene, transition: transition)
+        //gameOverDelegate.gameOver(score: score)
+        
+        
         print("END GAME")
       }
       

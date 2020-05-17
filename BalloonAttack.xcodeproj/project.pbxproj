@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C08787E2471942A009DEB86 /* EndScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C08787D2471942A009DEB86 /* EndScreen.swift */; };
 		0C31F1DA245F2A64005A2F29 /* FreePlay.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0C31F1D9245F2A64005A2F29 /* FreePlay.sks */; };
 		0C31F1DC245F2AD5005A2F29 /* FreePlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C31F1DB245F2AD5005A2F29 /* FreePlay.swift */; };
 		0C31F207245F6ACA005A2F29 /* InfoButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C31F206245F6ACA005A2F29 /* InfoButtonViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C08787D2471942A009DEB86 /* EndScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndScreen.swift; sourceTree = "<group>"; };
 		0C31F1D9245F2A64005A2F29 /* FreePlay.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FreePlay.sks; sourceTree = "<group>"; };
 		0C31F1DB245F2AD5005A2F29 /* FreePlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreePlay.swift; sourceTree = "<group>"; };
 		0C31F206245F6ACA005A2F29 /* InfoButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoButtonViewController.swift; sourceTree = "<group>"; };
@@ -63,10 +65,11 @@
 			isa = PBXGroup;
 			children = (
 				0C442BF624710B93004A90D4 /* EndGame.sks */,
+				0C08787D2471942A009DEB86 /* EndScreen.swift */,
+				0C31F1DB245F2AD5005A2F29 /* FreePlay.swift */,
 				0C31F1D9245F2A64005A2F29 /* FreePlay.sks */,
 				0CD6EE32246F7AED00A41C74 /* BalloonPop.mp3 */,
 				0C442BFA24710FA6004A90D4 /* GameOver.mp3 */,
-				0C31F1DB245F2AD5005A2F29 /* FreePlay.swift */,
 			);
 			path = FreePlay;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				0C31F1DC245F2AD5005A2F29 /* FreePlay.swift in Sources */,
 				0C48BEE1245D1ACB00A721EC /* AppDelegate.swift in Sources */,
 				0C48BEE3245D1ACB00A721EC /* SceneDelegate.swift in Sources */,
+				0C08787E2471942A009DEB86 /* EndScreen.swift in Sources */,
 				0CEFFFF2246B45120044BCD6 /* WeatherViewController.swift in Sources */,
 				0CA32463246891ED00EBA37D /* SceneViewControlller.swift in Sources */,
 				0C31F207245F6ACA005A2F29 /* InfoButtonViewController.swift in Sources */,

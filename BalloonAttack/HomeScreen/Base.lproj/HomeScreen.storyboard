@@ -15,7 +15,7 @@
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="BalloonAttack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="HomeViewController" customModule="BalloonAttack" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,7 +39,8 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Ojh-nx-GTB" kind="show" id="viz-gU-VDS"/>
+                                    <action selector="freePlay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ufg-1V-6Qw"/>
+                                    <segue destination="Ojh-nx-GTB" kind="show" id="ERe-K9-RqD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Fd-tV-taZ">
@@ -49,6 +50,10 @@
                                 <state key="normal" title="Time Attack" backgroundImage="YellowButton">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="timeAttack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YeF-qL-9Tv"/>
+                                    <segue destination="Ojh-nx-GTB" kind="show" id="iQh-7Q-4ah"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6J-Cv-OF4">
                                 <rect key="frame" x="20" y="604" width="374" height="109"/>
@@ -57,6 +62,10 @@
                                 <state key="normal" title="Daily Challenge" backgroundImage="GreenButton">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="dailyChallenge:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rt9-Rn-bL8"/>
+                                    <segue destination="Ojh-nx-GTB" kind="show" id="vzV-8f-PX4"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNh-S4-gLA">
                                 <rect key="frame" x="355" y="800.5" width="39" height="34"/>
@@ -72,6 +81,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <state key="normal" title="Check my weather!"/>
                                 <connections>
+                                    <action selector="checkWeather:" destination="BYZ-38-t0r" eventType="touchUpInside" id="erY-bT-v6U"/>
                                     <segue destination="wf3-Wc-tLh" kind="show" id="FNR-lK-eo6"/>
                                 </connections>
                             </button>
@@ -203,4 +213,7 @@
         <image name="YellowButton" width="102" height="26.5"/>
         <image name="info.circle" catalog="system" width="64" height="60"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ERe-K9-RqD"/>
+    </inferredMetricsTieBreakers>
 </document>
