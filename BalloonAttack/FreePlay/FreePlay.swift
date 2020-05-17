@@ -29,7 +29,7 @@ class FreePlay: SKScene, SKPhysicsContactDelegate {
    let url = URL(fileURLWithPath: path!)
    */
   
-  var balloonList = ["RedBalloon", "BlueBalloon", "LightBlueBalloon", "GreenBalloon", "PinkBalloon"]
+  var balloonList = ["RedBalloon", "BlueBalloon", "LightBlueBalloon", "GreenBalloon"]
   
   override func didMove(to view: SKView){
     
@@ -37,7 +37,7 @@ class FreePlay: SKScene, SKPhysicsContactDelegate {
     self.physicsWorld.contactDelegate = self
     
     scoreLabel = SKLabelNode(text: "Score: ")
-    scoreLabel.position = CGPoint(x: -175, y: 550)
+    scoreLabel.position = CGPoint(x: -180, y: 465)
     scoreLabel.fontName = "AmericanTypewriter-Bold"
     scoreLabel.fontSize = 36
     scoreLabel.fontColor = UIColor.white
@@ -57,6 +57,9 @@ class FreePlay: SKScene, SKPhysicsContactDelegate {
     let balloon = SKSpriteNode(imageNamed: balloonList[0])
     balloon.name = "balloon"
     
+    let deathBalloon = SKSpriteNode(imageNamed: "PinkBalloon")
+    deathBalloon.name = "deathBalloon"
+    
     //random position based on screen size
     let randomBalloonPosition = GKRandomDistribution(lowestValue: -320, highestValue: 320)
     let position = CGFloat(randomBalloonPosition.nextInt())
@@ -66,7 +69,12 @@ class FreePlay: SKScene, SKPhysicsContactDelegate {
     balloon.physicsBody = SKPhysicsBody(rectangleOf: balloon.size)
     balloon.physicsBody?.isDynamic = true
     
+    deathBalloon.position = CGPoint(x: position, y:self.frame.size.height + deathBalloon.size.height)
+    deathBalloon.physicsBody = SKPhysicsBody(rectangleOf: deathBalloon.size)
+    deathBalloon.physicsBody?.isDynamic = true
+    
     self.addChild(balloon)
+    self.addChild(deathBalloon)
     
     let animationDuration:TimeInterval = 6
     var actionArray = [SKAction]()
@@ -74,6 +82,7 @@ class FreePlay: SKScene, SKPhysicsContactDelegate {
     actionArray.append(SKAction.removeFromParent())
     
     balloon.run(SKAction.sequence(actionArray))
+    //deathBalloon.run(SKAction.sequence(actionArray))
     
   }
   
@@ -98,6 +107,25 @@ class FreePlay: SKScene, SKPhysicsContactDelegate {
         catch{
           print("couldn't find ")
         }
+      }
+      else if touchedNode.name == "deathBalloon"{
+        touchedNode.removeFromParent()
+        
+        let path = Bundle.main.path(forResource: "GameOver", ofType: "mp3")
+        let url = URL(fileURLWithPath: path!)
+        
+        do{
+          popSoundEffect = try AVAudioPlayer(contentsOf: url)
+          popSoundEffect?.play()
+        }
+        catch{
+          print("couldn't find ")
+        }
+        
+        let scene = SKScene(fileNamed: "EndGame")!
+        let transition = SKTransition.doorway(withDuration: 1)
+        self.view?.presentScene(scene, transition: transition)
+        print("END GAME")
       }
       
     }

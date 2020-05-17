@@ -15,6 +15,9 @@ class SceneViewController: UIViewController{
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
+    
+    self.navigationController?.setNavigationBarHidden(false, animated: false)
+    self.navigationController?.navigationBar.barTintColor = UIColor(red: 112.0/255.0, green: 193.0/255.0, blue: 179.0/255.0, alpha: 1.0)
         
     if let view = self.view as! SKView? {
       // Load the SKScene from 'GameScene.sks'
@@ -25,8 +28,10 @@ class SceneViewController: UIViewController{
         //view.removeFromSuperview()
         // Present the scene
         //view.ignoresSiblingOrder = true
-        
-        view.presentScene(scene)
+        //let transition = SKTransition.moveIn(with: .right, duration: 1)
+        let transition = SKTransition.doorway(withDuration: 1)
+        view.presentScene(scene, transition: transition)
+        //view.presentScene(scene)
         //currentScene = scene as? FreePlay
         //currentScene?.viewController = self
         view.showsNodeCount = true

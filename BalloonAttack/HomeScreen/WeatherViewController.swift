@@ -65,7 +65,7 @@ class WeatherViewController: UIViewController {
       }
       task.resume()
       
-      //self.changeBackground()
+      self.changeBackground()
     }
     else{
       weatherLabel.text = "Could not be found"
@@ -73,12 +73,13 @@ class WeatherViewController: UIViewController {
       
     }
     //print(Singleton.weatherID)
-    //changeBackground()
+    changeBackground()
     
   }
   
   
   override func viewWillAppear(_ animated: Bool) {
+    self.navigationController?.setNavigationBarHidden(false, animated: false)
     self.changeBackground()
 
   }
@@ -103,20 +104,31 @@ class WeatherViewController: UIViewController {
   
   func changeBackground(){
     switch Singleton.weatherID {
+      //Thunderstorms
     case 200...399:
-      self.view.backgroundColor = UIColor.yellow
-      
+      self.view.backgroundColor = UIColor(hex: "#ffdf46ff")
+      self.navigationController?.navigationBar.barTintColor = UIColor(hex: "#ffe700ff")
+    //Drizzle
     case 300...399:
-      self.view.backgroundColor = UIColor.systemIndigo
-      
+      self.view.backgroundColor = UIColor(hex: "#95e0e8ff")
+      self.navigationController?.navigationBar.barTintColor = UIColor(hex: "#95e0e8ff")
+    //Rain
     case 500...599:
-      self.view.backgroundColor = UIColor.blue
+      self.view.backgroundColor = UIColor(hex: "#4f86f7ff")
+      self.navigationController?.navigationBar.barTintColor = UIColor(hex: "#4f86f7ff")
+    //Snow
     case 600...699:
-      self.view.backgroundColor = UIColor.green
+      self.view.backgroundColor = UIColor(hex: "#8ba8b7ff")
+      self.navigationController?.navigationBar.barTintColor = UIColor(hex: "#8ba8b7ff")
+    //Atmosphere
     case 700...799:
-      self.view.backgroundColor = UIColor.orange
+      self.view.backgroundColor = UIColor(hex: "#da2647ff")
+      self.navigationController?.navigationBar.barTintColor = UIColor(hex: "#da2647ff")
+
     default:
-      self.view.backgroundColor = UIColor.systemGray2
+      self.view.backgroundColor =  UIColor(hex: "#a6e7ffff")
+      self.navigationController?.navigationBar.barTintColor = UIColor(hex: "#a6e7ffff")
+
     }
   }
   
@@ -134,4 +146,34 @@ extension String {
   mutating func capitalizeFirstLetter() {
     self = self.capitalizingFirstLetter()
   }
+}
+
+
+// https://www.hackingwithswift.com/example-code/uicolor/how-to-convert-a-hex-color-to-a-uicolor
+extension UIColor {
+    public convenience init?(hex: String) {
+        let r, g, b, a: CGFloat
+
+        if hex.hasPrefix("#") {
+            let start = hex.index(hex.startIndex, offsetBy: 1)
+            let hexColor = String(hex[start...])
+
+            if hexColor.count == 8 {
+                let scanner = Scanner(string: hexColor)
+                var hexNumber: UInt64 = 0
+
+                if scanner.scanHexInt64(&hexNumber) {
+                    r = CGFloat((hexNumber & 0xff000000) >> 24) / 255
+                    g = CGFloat((hexNumber & 0x00ff0000) >> 16) / 255
+                    b = CGFloat((hexNumber & 0x0000ff00) >> 8) / 255
+                    a = CGFloat(hexNumber & 0x000000ff) / 255
+
+                    self.init(red: r, green: g, blue: b, alpha: a)
+                    return
+                }
+            }
+        }
+
+        return nil
+    }
 }

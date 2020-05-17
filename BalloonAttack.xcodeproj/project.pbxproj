@@ -11,6 +11,8 @@
 		0C31F1DC245F2AD5005A2F29 /* FreePlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C31F1DB245F2AD5005A2F29 /* FreePlay.swift */; };
 		0C31F207245F6ACA005A2F29 /* InfoButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C31F206245F6ACA005A2F29 /* InfoButtonViewController.swift */; };
 		0C31F209245F6AD5005A2F29 /* InfoButton.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C31F208245F6AD5005A2F29 /* InfoButton.storyboard */; };
+		0C442BF724710B93004A90D4 /* EndGame.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0C442BF624710B93004A90D4 /* EndGame.sks */; };
+		0C442BFB24710FA6004A90D4 /* GameOver.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0C442BFA24710FA6004A90D4 /* GameOver.mp3 */; };
 		0C48BEE1245D1ACB00A721EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C48BEE0245D1ACB00A721EC /* AppDelegate.swift */; };
 		0C48BEE3245D1ACB00A721EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C48BEE2245D1ACB00A721EC /* SceneDelegate.swift */; };
 		0C48BEE5245D1ACB00A721EC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C48BEE4245D1ACB00A721EC /* HomeViewController.swift */; };
@@ -29,6 +31,8 @@
 		0C31F1DB245F2AD5005A2F29 /* FreePlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreePlay.swift; sourceTree = "<group>"; };
 		0C31F206245F6ACA005A2F29 /* InfoButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoButtonViewController.swift; sourceTree = "<group>"; };
 		0C31F208245F6AD5005A2F29 /* InfoButton.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InfoButton.storyboard; sourceTree = "<group>"; };
+		0C442BF624710B93004A90D4 /* EndGame.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EndGame.sks; sourceTree = "<group>"; };
+		0C442BFA24710FA6004A90D4 /* GameOver.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = GameOver.mp3; sourceTree = "<group>"; };
 		0C48BEDD245D1ACB00A721EC /* BalloonAttack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BalloonAttack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C48BEE0245D1ACB00A721EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C48BEE2245D1ACB00A721EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,8 +62,10 @@
 		0C31F1D8245F28BB005A2F29 /* FreePlay */ = {
 			isa = PBXGroup;
 			children = (
+				0C442BF624710B93004A90D4 /* EndGame.sks */,
 				0C31F1D9245F2A64005A2F29 /* FreePlay.sks */,
 				0CD6EE32246F7AED00A41C74 /* BalloonPop.mp3 */,
+				0C442BFA24710FA6004A90D4 /* GameOver.mp3 */,
 				0C31F1DB245F2AD5005A2F29 /* FreePlay.swift */,
 			);
 			path = FreePlay;
@@ -179,6 +185,8 @@
 				0C31F209245F6AD5005A2F29 /* InfoButton.storyboard in Resources */,
 				0C830A2E245E3A7000D451FE /* ArchitectsDaughter.ttf in Resources */,
 				0C48BEED245D1ACC00A721EC /* LaunchScreen.storyboard in Resources */,
+				0C442BF724710B93004A90D4 /* EndGame.sks in Resources */,
+				0C442BFB24710FA6004A90D4 /* GameOver.mp3 in Resources */,
 				0CD6EE33246F7AED00A41C74 /* BalloonPop.mp3 in Resources */,
 				0C31F1DA245F2A64005A2F29 /* FreePlay.sks in Resources */,
 				0C48BEEA245D1ACC00A721EC /* Assets.xcassets in Resources */,
