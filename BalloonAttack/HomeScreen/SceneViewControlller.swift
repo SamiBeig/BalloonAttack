@@ -22,15 +22,19 @@ class SceneViewController: UIViewController{
     Home.selectedGameMode = self
     
     
+    
+    
     self.navigationController?.setNavigationBarHidden(false, animated: false)
     self.navigationController?.navigationBar.barTintColor = UIColor(red: 112.0/255.0, green: 193.0/255.0, blue: 179.0/255.0, alpha: 1.0)
     
-    //print(currentScene ?? "")
+    print(currentScene ?? "could not be found")
         
     if let view = self.view as! SKView? {
+      
       // Load the SKScene from 'FreePlay.sks'
-      if let currentScene = currentScene{
-        if let scene = SKScene(fileNamed: currentScene) {
+      //if let currentScene = "TimeAttack"{
+      print(currentScene ?? "could not be found")
+        if let scene = SKScene(fileNamed: "TimeAttack") {
           // Set the scale mode to scale to fit the window
           scene.scaleMode = .aspectFill
           // Present the scene
@@ -39,12 +43,10 @@ class SceneViewController: UIViewController{
           let transition = SKTransition.doorway(withDuration: 1)
           view.presentScene(scene, transition: transition)
           //view.presentScene(scene)
-          //currentScene = scene as? FreePlay
-          //currentScene?.viewController = self
           view.showsNodeCount = true
           view.showsFPS = true
         }
-      }
+      //}
     }
   }
 }

@@ -19,13 +19,13 @@ class EndScreen: SKScene{
   
   override func didMove(to view: SKView) {
     //print(finalScore)
-    
-    gameOver.text = "GAME OVER!"
-    gameOver.position = CGPoint(x: 0, y: 300)
-    gameOver.fontName = "AmericanTypewriter-Bold"
-    gameOver.fontSize = 36
-    gameOver.fontColor = UIColor.white
-    self.addChild(gameOver)
+//    
+//    gameOver.text = "GAME OVER!"
+//    gameOver.position = CGPoint(x: 0, y: 300)
+//    gameOver.fontName = "AmericanTypewriter-Bold"
+//    gameOver.fontSize = 36
+//    gameOver.fontColor = UIColor.white
+//    self.addChild(gameOver)
 
   }
 

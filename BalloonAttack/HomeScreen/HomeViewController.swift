@@ -55,7 +55,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate{
   }
   
   @IBAction func timeAttack(_ sender: Any) {
-    selectedGameMode?.tapped(name: "FreePlay")
+    selectedGameMode?.tapped(name: "TimeAttack")
   }
   
   @IBAction func dailyChallenge(_ sender: Any) {
