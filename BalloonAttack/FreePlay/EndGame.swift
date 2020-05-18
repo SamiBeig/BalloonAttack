@@ -6,20 +6,29 @@
 //  Copyright © 2020 Sami Beig. All rights reserved.
 //
 
-import Foundation
 import SpriteKit
 import GameplayKit
 import AVFoundation
 
 
-class EndGame: SKScene, SKPhysicsContactDelegate {
+
+class EndGame: SKScene {
+  
+  var finalScore: Int = 0
+  var gameOver = SKLabelNode(text: "GAME OVER!")
 
   
-  override func didMove(to view: SKView){
-    
-    self.navigationController.setNavigationBarHidden(false, animated: false)
-    self.navigationController?.navigationBar.barTintColor = UIColor(red: 112.0/255.0, green: 193.0/255.0, blue: 179.0/255.0, alpha: 1.0)
-    
-  }
   
+  override func didMove(to view: SKView) {
+    print(finalScore)
+    
+    gameOver.text = "GAME OVER!"
+    gameOver.position = CGPoint(x: -180, y: 465)
+    gameOver.fontName = "AmericanTypewriter-Bold"
+    gameOver.fontSize = 36
+    gameOver.fontColor = UIColor.red
+    self.addChild(gameOver)
+
+  }
+
 }

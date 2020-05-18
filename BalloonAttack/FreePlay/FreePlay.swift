@@ -10,11 +10,8 @@ import SpriteKit
 import GameplayKit
 import AVFoundation
 
-
 class FreePlay: SKScene, SKPhysicsContactDelegate {
-  //private var label : SKLabelNode?
-  //private var spinnyNode : SKShapeNode
-  
+
   var scoreLabel:SKLabelNode!
   var score:Int = 0{
     didSet{
@@ -24,10 +21,8 @@ class FreePlay: SKScene, SKPhysicsContactDelegate {
   var gameTimer:Timer!
   var popSoundEffect: AVAudioPlayer?
   
-  /*
-   let path = Bundle.main.url(forResource: "BalloonPop", withExtension: "mp3")
-   let url = URL(fileURLWithPath: path!)
-   */
+
+  var counterTimer = Timer()
   
   var balloonList = ["RedBalloon", "BlueBalloon", "YellowBalloon", "GreenBalloon", "PinkBalloon"]
   
@@ -46,7 +41,12 @@ class FreePlay: SKScene, SKPhysicsContactDelegate {
     
     gameTimer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector:#selector(addBalloons), userInfo: nil, repeats: true)
     
+    
   }
+  
+
+  
+  
   
   @objc func addBalloons(){
     
@@ -81,7 +81,7 @@ class FreePlay: SKScene, SKPhysicsContactDelegate {
     self.addChild(balloon)
     self.addChild(deathBalloon)
     
-    let animationDuration:TimeInterval = 6.5
+    let animationDuration:TimeInterval = 4.5
     var actionArray = [SKAction]()
     
     actionArray.append(SKAction.move(to: CGPoint(x: position, y: -balloon.size.height - 500), duration: animationDuration))
@@ -91,6 +91,7 @@ class FreePlay: SKScene, SKPhysicsContactDelegate {
     deathBalloon.run(SKAction.sequence(actionArray))
     
   }
+  
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
     /* Called when a touch begins */
@@ -129,8 +130,10 @@ class FreePlay: SKScene, SKPhysicsContactDelegate {
         }
         
         let scene = SKScene(fileNamed: "EndGame")!
+        
         let transition = SKTransition.doorway(withDuration: 1)
         self.view?.presentScene(scene, transition: transition)
+        
         print("END GAME")
       }
       
