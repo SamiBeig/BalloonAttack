@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0C08787E2471942A009DEB86 /* EndScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C08787D2471942A009DEB86 /* EndScreen.swift */; };
+		0C0C925024733789004A435D /* DailyChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0C924F24733789004A435D /* DailyChallenge.swift */; };
+		0C0C9252247337B5004A435D /* DailyChallenge.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0C0C9251247337B5004A435D /* DailyChallenge.sks */; };
+		0C0C925424733802004A435D /* DailyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0C925324733802004A435D /* DailyViewController.swift */; };
+		0C0C925724735378004A435D /* Rain.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0C0C925524735378004A435D /* Rain.sks */; };
+		0C0C925824735378004A435D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C0C925624735378004A435D /* Assets.xcassets */; };
 		0C31F1DA245F2A64005A2F29 /* FreePlay.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0C31F1D9245F2A64005A2F29 /* FreePlay.sks */; };
 		0C31F1DC245F2AD5005A2F29 /* FreePlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C31F1DB245F2AD5005A2F29 /* FreePlay.swift */; };
 		0C31F207245F6ACA005A2F29 /* InfoButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C31F206245F6ACA005A2F29 /* InfoButtonViewController.swift */; };
@@ -20,6 +25,7 @@
 		0C48BEE8245D1ACB00A721EC /* HomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C48BEE6245D1ACB00A721EC /* HomeScreen.storyboard */; };
 		0C48BEEA245D1ACC00A721EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C48BEE9245D1ACC00A721EC /* Assets.xcassets */; };
 		0C48BEED245D1ACC00A721EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C48BEEB245D1ACC00A721EC /* LaunchScreen.storyboard */; };
+		0C52CAC624732CAA00D5521F /* TimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C52CAC524732CAA00D5521F /* TimeViewController.swift */; };
 		0C7C51962472002B0012A566 /* TimeAttack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7C51952472002B0012A566 /* TimeAttack.swift */; };
 		0C7C5198247200690012A566 /* TimeAttack.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0C7C5197247200690012A566 /* TimeAttack.sks */; };
 		0C7C519A247212270012A566 /* Boost.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0C7C5199247212270012A566 /* Boost.wav */; };
@@ -33,6 +39,11 @@
 
 /* Begin PBXFileReference section */
 		0C08787D2471942A009DEB86 /* EndScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndScreen.swift; sourceTree = "<group>"; };
+		0C0C924F24733789004A435D /* DailyChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChallenge.swift; sourceTree = "<group>"; };
+		0C0C9251247337B5004A435D /* DailyChallenge.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DailyChallenge.sks; sourceTree = "<group>"; };
+		0C0C925324733802004A435D /* DailyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyViewController.swift; sourceTree = "<group>"; };
+		0C0C925524735378004A435D /* Rain.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Rain.sks; sourceTree = "<group>"; };
+		0C0C925624735378004A435D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C31F1D9245F2A64005A2F29 /* FreePlay.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FreePlay.sks; sourceTree = "<group>"; };
 		0C31F1DB245F2AD5005A2F29 /* FreePlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreePlay.swift; sourceTree = "<group>"; };
 		0C31F206245F6ACA005A2F29 /* InfoButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoButtonViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +58,7 @@
 		0C48BEE9245D1ACC00A721EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C48BEEC245D1ACC00A721EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C48BEEE245D1ACC00A721EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C52CAC524732CAA00D5521F /* TimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeViewController.swift; sourceTree = "<group>"; };
 		0C7C51952472002B0012A566 /* TimeAttack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAttack.swift; sourceTree = "<group>"; };
 		0C7C5197247200690012A566 /* TimeAttack.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TimeAttack.sks; sourceTree = "<group>"; };
 		0C7C5199247212270012A566 /* Boost.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Boost.wav; sourceTree = "<group>"; };
@@ -69,6 +81,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C0C924E24733774004A435D /* DailyChallenge */ = {
+			isa = PBXGroup;
+			children = (
+				0C0C924F24733789004A435D /* DailyChallenge.swift */,
+				0C0C9251247337B5004A435D /* DailyChallenge.sks */,
+				0C0C925524735378004A435D /* Rain.sks */,
+				0C0C925624735378004A435D /* Assets.xcassets */,
+			);
+			path = DailyChallenge;
+			sourceTree = "<group>";
+		};
 		0C31F1D8245F28BB005A2F29 /* FreePlay */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +133,7 @@
 		0C48BEDF245D1ACB00A721EC /* BalloonAttack */ = {
 			isa = PBXGroup;
 			children = (
+				0C0C924E24733774004A435D /* DailyChallenge */,
 				0C7C5194247200050012A566 /* TimeAttack */,
 				0C31F205245F6AB2005A2F29 /* InfoButton */,
 				0C31F1D8245F28BB005A2F29 /* FreePlay */,
@@ -141,6 +165,8 @@
 			children = (
 				0C48BEE6245D1ACB00A721EC /* HomeScreen.storyboard */,
 				0C48BEE4245D1ACB00A721EC /* HomeViewController.swift */,
+				0C52CAC524732CAA00D5521F /* TimeViewController.swift */,
+				0C0C925324733802004A435D /* DailyViewController.swift */,
 				0CA32462246891ED00EBA37D /* SceneViewControlller.swift */,
 				0CEFFFF1246B45120044BCD6 /* WeatherViewController.swift */,
 			);
@@ -209,10 +235,13 @@
 				0C830A2E245E3A7000D451FE /* ArchitectsDaughter.ttf in Resources */,
 				0C48BEED245D1ACC00A721EC /* LaunchScreen.storyboard in Resources */,
 				0C442BF724710B93004A90D4 /* EndGame.sks in Resources */,
+				0C0C925824735378004A435D /* Assets.xcassets in Resources */,
+				0C0C9252247337B5004A435D /* DailyChallenge.sks in Resources */,
 				0C7C519A247212270012A566 /* Boost.wav in Resources */,
 				0C442BFB24710FA6004A90D4 /* GameOver.mp3 in Resources */,
 				0CD6EE33246F7AED00A41C74 /* BalloonPop.mp3 in Resources */,
 				0C7C519C247212CE0012A566 /* death.wav in Resources */,
+				0C0C925724735378004A435D /* Rain.sks in Resources */,
 				0C7C5198247200690012A566 /* TimeAttack.sks in Resources */,
 				0C31F1DA245F2A64005A2F29 /* FreePlay.sks in Resources */,
 				0C48BEEA245D1ACC00A721EC /* Assets.xcassets in Resources */,
@@ -231,7 +260,10 @@
 				0C31F1DC245F2AD5005A2F29 /* FreePlay.swift in Sources */,
 				0C48BEE1245D1ACB00A721EC /* AppDelegate.swift in Sources */,
 				0C48BEE3245D1ACB00A721EC /* SceneDelegate.swift in Sources */,
+				0C0C925424733802004A435D /* DailyViewController.swift in Sources */,
 				0C08787E2471942A009DEB86 /* EndScreen.swift in Sources */,
+				0C0C925024733789004A435D /* DailyChallenge.swift in Sources */,
+				0C52CAC624732CAA00D5521F /* TimeViewController.swift in Sources */,
 				0CEFFFF2246B45120044BCD6 /* WeatherViewController.swift in Sources */,
 				0C7C51962472002B0012A566 /* TimeAttack.swift in Sources */,
 				0CA32463246891ED00EBA37D /* SceneViewControlller.swift in Sources */,

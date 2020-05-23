@@ -11,7 +11,7 @@ import SpriteKit
 import GameplayKit
 import CoreLocation
 
-protocol gameModeDelegate{
+protocol gameModeDelegate: class{
   func tapped(name: String)
 }
 
@@ -27,7 +27,18 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate{
     
     self.navigationController?.setNavigationBarHidden(true, animated: false)
     
-    /*
+  }
+  
+  @IBAction func freePlay(_ sender: Any) {
+    selectedGameMode?.tapped(name: "FreePlay")
+  }
+  
+  @IBAction func timeAttack(_ sender: Any) {
+    selectedGameMode?.tapped(name: "TimeAttack")
+  }
+  
+  @IBAction func dailyChallenge(_ sender: Any) {
+    selectedGameMode?.tapped(name: "DailyChallenge")
     let authorizationStatus = CLLocationManager.authorizationStatus()
     if authorizationStatus == .notDetermined{
       locationManager.requestWhenInUseAuthorization()
@@ -46,20 +57,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate{
     locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
     locationManager.startUpdatingLocation()
     isUpdatingLocation = true
-    */
-    
-  }
-  
-  @IBAction func freePlay(_ sender: Any) {
-    selectedGameMode?.tapped(name: "FreePlay")
-  }
-  
-  @IBAction func timeAttack(_ sender: Any) {
-    selectedGameMode?.tapped(name: "TimeAttack")
-  }
-  
-  @IBAction func dailyChallenge(_ sender: Any) {
-    selectedGameMode?.tapped(name: "DailyChallenge")
   }
   
   @IBAction func checkWeather(_ sender: Any) {    
@@ -109,21 +106,12 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate{
     
   }
   
-  
-  
-  
-  
-  
-  
-  
+
 }
-
-
-
 
 class Singleton {
   
-  static var weatherID = 200
+  static var weatherID = 100    //default value is 100
   static var location:CLLocation?
   
   // Make init method private
