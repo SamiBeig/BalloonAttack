@@ -1,18 +1,18 @@
 //
-//  TimeAttack.swift
+//  DailyChallenge.swift
 //  BalloonAttack
 //
-//  Created by Sami Beig on 5/17/20.
+//  Created by Sami Beig on 5/18/20.
 //  Copyright © 2020 Sami Beig. All rights reserved.
 //
 
-import Foundation
 import SpriteKit
 import GameplayKit
 import AVFoundation
 
-class TimeAttack: SKScene, SKPhysicsContactDelegate {
+class DailyChallenge: SKScene, SKPhysicsContactDelegate {
   
+
   var scoreLabel:SKLabelNode!
   var score:Int = 0{
     didSet{
@@ -21,9 +21,7 @@ class TimeAttack: SKScene, SKPhysicsContactDelegate {
   }
   var gameTimer:Timer!
   var popSoundEffect: AVAudioPlayer?
-  var boostSoundEffect: AVAudioPlayer?
-  var deathSoundEffect: AVAudioPlayer?
-  var gameOverMusic: AVAudioPlayer?
+  
   
   var timerLabel:SKLabelNode!
   
@@ -32,7 +30,7 @@ class TimeAttack: SKScene, SKPhysicsContactDelegate {
       timerLabel.text = "Time left: \(timerValue)"
     }
   }
-  
+
   var counterTimer = Timer()
   
   var balloonList = ["RedBalloon", "BlueBalloon", "YellowBalloon", "GreenBalloon", "PinkBalloon", "HealthBalloon", "DeathBalloon"]
@@ -41,6 +39,17 @@ class TimeAttack: SKScene, SKPhysicsContactDelegate {
     
     self.physicsWorld.gravity = CGVector(dx: 0, dy:0)
     self.physicsWorld.contactDelegate = self
+    
+    //Adding weather effects based on weatherID
+    if (Singleton.weatherID >= 200 && Singleton.weatherID <= 699){
+      let path = Bundle.main.path(forResource: "Rain", ofType: "sks")
+      let rainDrops = NSKeyedUnarchiver.unarchiveObject(withFile: path!) as! SKEmitterNode
+      
+      rainDrops.position = CGPoint(x: self.size.width/2, y: self.size.height )
+      rainDrops.targetNode = self
+      
+      self.addChild(rainDrops)
+    }
     
     scoreLabel = SKLabelNode(text: "Score: ")
     scoreLabel.position = CGPoint(x: -180, y: 465)
@@ -63,6 +72,12 @@ class TimeAttack: SKScene, SKPhysicsContactDelegate {
     
     startTimer()
     
+    print(Singleton.weatherID)
+    
+    
+    
+    changeBackground()
+
   }
   
   func startTimer(){
@@ -82,6 +97,31 @@ class TimeAttack: SKScene, SKPhysicsContactDelegate {
     }
   }
   
+  func changeBackground(){
+    switch Singleton.weatherID {
+      //Thunderstorms
+    case 200...399:
+      self.backgroundColor = #colorLiteral(red: 1, green: 0.9058823529, blue: 0, alpha: 1)
+    //Drizzle
+    case 300...399:
+      self.backgroundColor = #colorLiteral(red: 0.5843137255, green: 0.8784313725, blue: 0.9098039216, alpha: 1)
+    //Rain
+    case 500...599:
+      self.backgroundColor = #colorLiteral(red: 0.3098039216, green: 0.5254901961, blue: 0.968627451, alpha: 1)
+    //Snow
+    case 600...699:
+      self.backgroundColor = #colorLiteral(red: 0.5450980392, green: 0.6588235294, blue: 0.7176470588, alpha: 1)
+    //Atmosphere
+    case 700...799:
+      self.backgroundColor = #colorLiteral(red: 0.8549019608, green: 0.1490196078, blue: 0.2784313725, alpha: 1)
+    case 800...899:
+      self.backgroundColor = #colorLiteral(red: 0.8509803922, green: 0.8392156863, blue: 0.8117647059, alpha: 1)
+    default:
+      self.backgroundColor =  #colorLiteral(red: 0.768627451, green: 0.3843137255, blue: 0.06274509804, alpha: 1)
+    }
+  }
+
+  
   
   
   @objc func addBalloons(){
@@ -100,20 +140,24 @@ class TimeAttack: SKScene, SKPhysicsContactDelegate {
     else{
       balloon.name = "balloon"
     }
+
     
     //random position based on screen size
     let randomBalloonPosition = GKRandomDistribution(lowestValue: -310, highestValue: 310)
     let position = CGFloat(randomBalloonPosition.nextInt())
+    
     
     //set position of balloon
     balloon.position = CGPoint(x: position, y:self.frame.size.height + balloon.size.height)
     balloon.physicsBody = SKPhysicsBody(rectangleOf: balloon.size)
     balloon.physicsBody?.allowsRotation = false
     balloon.physicsBody?.isDynamic = false
+
     
     self.addChild(balloon)
+
     
-    let animationDuration:TimeInterval = 4.5
+    let animationDuration:TimeInterval = 3
     var actionArray = [SKAction]()
     
     actionArray.append(SKAction.move(to: CGPoint(x: position, y: -balloon.size.height - 500), duration: animationDuration))
@@ -121,8 +165,8 @@ class TimeAttack: SKScene, SKPhysicsContactDelegate {
     
     balloon.run(SKAction.sequence(actionArray))
     
-    
   }
+  
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
     /* Called when a touch begins */
@@ -154,8 +198,8 @@ class TimeAttack: SKScene, SKPhysicsContactDelegate {
           let url = URL(fileURLWithPath: path!)
           
           do{
-            gameOverMusic = try AVAudioPlayer(contentsOf: url)
-            gameOverMusic?.play()
+            popSoundEffect = try AVAudioPlayer(contentsOf: url)
+            popSoundEffect?.play()
           }
           catch{
             print("couldn't find ")
@@ -179,8 +223,8 @@ class TimeAttack: SKScene, SKPhysicsContactDelegate {
         let url = URL(fileURLWithPath: path!)
         
         do{
-          boostSoundEffect = try AVAudioPlayer(contentsOf: url)
-          boostSoundEffect?.play()
+          popSoundEffect = try AVAudioPlayer(contentsOf: url)
+          popSoundEffect?.play()
         }
         catch{
           print("couldn't find sound ")

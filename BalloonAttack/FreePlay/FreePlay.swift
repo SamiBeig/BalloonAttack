@@ -11,6 +11,7 @@ import GameplayKit
 import AVFoundation
 
 class FreePlay: SKScene, SKPhysicsContactDelegate {
+  
 
   var scoreLabel:SKLabelNode!
   var score:Int = 0{
@@ -41,11 +42,8 @@ class FreePlay: SKScene, SKPhysicsContactDelegate {
     
     gameTimer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector:#selector(addBalloons), userInfo: nil, repeats: true)
     
-    
-  }
-  
 
-  
+  }
   
   
   @objc func addBalloons(){
